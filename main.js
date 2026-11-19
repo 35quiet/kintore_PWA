@@ -239,6 +239,7 @@ const A = {
   rDay: el => { const i = parseInt(el.dataset.v, 10), a = S.settings.remindDays, k = a.indexOf(i); if (k >= 0) a.splice(k, 1); else a.push(i); save(); render(); },
   ics: () => { if (!S.settings.remindDays.length) { toast('曜日を選んでください'); return; } icsDownload(); toast('開いたらカレンダーに追加してください'); },
   backup: async () => { await doBackup(); render(); },
+  fsaPick: () => fsaPick(), fsaClear: () => fsaClear(), fsaLoad: () => fsaLoad(),
   saveNow: () => { save(); render(); toast('保存しました'); },
   demoOn: () => { seedDemo(); render(); toast('サンプルを追加しました'); },
   demoOff: () => { if (!confirm('サンプルデータを削除しますか?(自分の記録は残ります)')) return; removeDemo(); render(); toast('サンプルを削除しました'); }
@@ -289,6 +290,7 @@ const C = {
   countRest: el => { S.settings.countRest = el.checked; save(); render(); },
   restAfter: el => { S.settings.restAfter = parseInt(el.value, 10); save(); },
   goalAdd: el => { if (el.value) { S.goals[el.value] = Math.max(S.goals[el.value] || 0, 100); save(); render(); } },
+  fsaAuto: el => fsaAutoSet(el.checked),
   import: el => {
     const f = el.files && el.files[0]; if (!f) return;
     const r = new FileReader();

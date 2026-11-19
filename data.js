@@ -1,6 +1,6 @@
 'use strict';
 /* 筋トレ管理 PWA - 固定データ(種目・色・定数) */
-const VER = '1.4.4';
+const VER = '1.5.0';
 
 const PARTS = [['chest','胸'],['back','背中'],['sho','肩'],['arm','腕'],['leg','脚'],['abs','腹'],['full','全身']];
 const PN = Object.fromEntries(PARTS);
