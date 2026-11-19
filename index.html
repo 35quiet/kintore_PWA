@@ -13,12 +13,6 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="icon" href="icon-192.png">
 <link rel="stylesheet" href="style.css">
-<script>
-/* ホーム画面から開いた時、下に余白が出るiOSの高さ不具合を補正 */
-(function(){var r=document.documentElement;function f(){try{var sa=window.navigator.standalone||matchMedia('(display-mode: standalone)').matches;var ih=window.innerHeight,h=ih;if(sa){var sh=(Math.abs(window.orientation)===90)?Math.min(screen.width,screen.height):Math.max(screen.width,screen.height);if(sh>h)h=sh}
-r.style.setProperty('--appH',h+'px')}catch(e){}}
-f();['resize','orientationchange','pageshow','visibilitychange','focus'].forEach(function(n){addEventListener(n,function(){f();setTimeout(f,300)})})})();
-</script>
 </head>
 <body>
 <div id="root"></div>
